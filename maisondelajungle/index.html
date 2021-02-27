@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Test</title>
+  </head>
+
+  <body>
+    <div id="root">Hello peeps</div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="http://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      function Header() {
+        return (<div>
+          <h1>The Jungle House</h1>
+        </div>);
+      }
+
+      function Description() {
+        return (
+          <p>Here you can buy any plant that you ever dreamt of letting rot due to lack of care</p>
+        );
+      }
+
+      function Banner() {
+        return (
+          <div>
+            <Header />
+            <Description />
+          </div>
+        );
+      }
+
+      function Cart() {
+        const monsteraPrice = 8;
+        const ivyPrice = 10;
+        const flowerPrice = 15;
+
+        return (
+          <div>
+            <h2>Cart:</h2>
+            <ul>
+              <li>Monstera: {monsteraPrice} euro(s)</li>
+              <li>Ivy: {ivyPrice} euro(s)</li>
+              <li>Flower: {flowerPrice} euro(s)</li>
+            </ul>
+          <p>Total: {monsteraPrice + ivyPrice + flowerPrice} euro(s)</p>
+          </div>
+        );
+      }
+
+      ReactDOM.render(
+        <React.Fragment><Header /><Description /><Cart /></React.Fragment>,
+        document.getElementById("root")
+      )
+    </script>
+  </body>
+</html>
