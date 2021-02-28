@@ -1,5 +1,6 @@
 
 import '../styles/Banner.css';
+import Recommendation from './Recommendation.jsx'
 import logo from '../assets/logo.png';
 
 function Banner() {
@@ -7,8 +8,11 @@ function Banner() {
 
   return (
     <div className="tjh_banner">
-      <img src={logo} alt="The Jungle House" className='tjh_logo' />
-      <h1 className="tjh_title">{title}</h1>
+      <div className="tjh_banner_row">
+        <img src={logo} alt="The Jungle House" className='tjh_logo' />
+        <h1 className="tjh_title">{title}</h1>
+      </div>
+      <Recommendation />
     </div>
   );
 }
