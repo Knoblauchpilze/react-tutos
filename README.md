@@ -9,6 +9,7 @@ General repository holding the various projects created while learning JS and re
 
 Here's a list of useful links that were useful during the learning process:
 * [React doc](https://reactjs.org/docs/hello-world.html)
+* [Lots of icons](https://www.flaticon.com/authors/pixel-perfect)
 
 # Useful commands
 

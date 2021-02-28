@@ -1,11 +1,13 @@
 
+import '../styles/Cart.css';
+
 function Cart() {
   const monsteraPrice = 12;
   const ivyPrice = 8;
   const flowerPrice = 15;
 
   return (
-    <div>
+    <div className="tjh_cart">
       <h2>Cart:</h2>
       <ul>
         <li>Monstera: {monsteraPrice} euro(s)</li>

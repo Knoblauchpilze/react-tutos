@@ -1,7 +1,7 @@
 
-import './App.css';
-import Banner from './Banner.js';
-import Cart from './Cart.js';
+import '../styles/App.css';
+import Banner from './Banner.jsx';
+import Cart from './Cart.jsx';
 
 function App() {
   return (
