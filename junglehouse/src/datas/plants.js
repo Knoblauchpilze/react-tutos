@@ -1,53 +1,71 @@
 
 export const plants = [
   {
-    name: 'monstera',
-    category: 'classic',
-    id: '1ed',
+    name: "monstera",
+    category: "classic",
+    id: "1ed",
     isBestSale: true,
-    isSpecialOffer: true
+    isSpecialOffer: true,
+    light: 2,
+    water: 2,
   },
   {
-    name: 'ficus lyrata',
-    category: 'classic',
-    id: '2ab'
+    name: "ficus lyrata",
+    category: "classic",
+    id: "2ab",
+    light: 1,
+    water: 2,
   },
   {
-    name: 'pothos argenté',
-    category: 'classic',
-    id: '3sd',
-    isSpecialOffer: true
+    name: "pothos argenté",
+    category: "classic",
+    id: "3sd",
+    isSpecialOffer: true,
+    light: 2,
+    water: 1,
   },
   {
-    name: 'yucca',
-    category: 'classic',
-    id: '4kk'
+    name: "yucca",
+    category: "classic",
+    id: "4kk",
+    light: 1,
+    water: 1,
   },
   {
-    name: 'olivier',
-    category: 'outdoor',
-    id: '5pl',
-    isSpecialOffer: true
+    name: "olivier",
+    category: "outdoor",
+    id: "5pl",
+    isSpecialOffer: true,
+    light: 3,
+    water: 2,
   },
   {
-    name: 'géranium',
-    category: 'outdoor',
-    id: '6uo'
+    name: "géranium",
+    category: "outdoor",
+    id: "6uo",
+    light: 2,
+    water: 3,
   },
   {
-    name: 'basilique',
-    category: 'outdoor',
-    id: '7ie',
-    isBestSale: true
+    name: "basilique",
+    category: "outdoor",
+    id: "7ie",
+    isBestSale: true,
+    light: 1,
+    water: 3,
   },
   {
-    name: 'aloe',
-    category: 'perennial',
-    id: '8fp'
+    name: "aloe",
+    category: "perennial",
+    id: "8fp",
+    light: 3,
+    water: 1,
   },
   {
-    name: 'succulente',
-    category: 'perennial',
-    id: '9vn'
+    name: "succulente",
+    category: "perennial",
+    id: "9vn",
+    light: 4,
+    water: 1,
   }
 ]

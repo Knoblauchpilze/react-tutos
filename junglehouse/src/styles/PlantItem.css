@@ -1,0 +1,26 @@
+
+.tjh_plant_item {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+
+.tjh_plant_item_cover {
+  width: 220px;
+  height: 220px;
+  border-radius: 20px;
+}
+
+.tjh_sales {
+  position: absolute;
+  right: 0px;
+  top: 10px;
+  font-weight: 500;
+  color: white;
+  padding: 5px 10px;
+  background-color: #31b572;
+}
