@@ -11,7 +11,7 @@ function CareScale(props) {
   const range = [1, 2, 3];
 
   return (
-    <div>
+    <div onClick = {() => handleClick(props.care, scale)}>
       {range.map((rangeElem) =>
         scale >= rangeElem ?
         <img key={rangeElem.toString()} src={icon} alt={alt}/> :
@@ -19,6 +19,27 @@ function CareScale(props) {
       )}
     </div>
   );
+}
+
+function handleClick(care, amount) {
+  const good = (care === "light" ? "sun" : "water");
+  let text = "";
+
+  switch (amount) {
+    case 1:
+      text = "only few";
+      break;
+    case 2:
+      text = "a moderate amount of";
+      break;
+    case 3:
+      text = "a lot of";
+    default:
+      text = "an unknown amount of";
+      break;
+  }
+
+  alert(`This plant requires ${text} ${good}`);
 }
 
 export default CareScale

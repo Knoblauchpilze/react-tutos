@@ -14,8 +14,8 @@ function PlantItem(props) {
 
   return (
     <div key={id} className="tjh_plant_item">
-      <h3>{name}</h3>
-      <img className="tjh_plant_item_cover" src={cover} />
+      <img className="tjh_plant_item_cover" src={cover} alt={`cover for ${name}`}/>
+      <div>{name}</div>
       <div>
         <CareScale value={light} care="light"/>
         <CareScale value={water} care="water"/>
