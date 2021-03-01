@@ -2,11 +2,17 @@
 import '../styles/Cart.css';
 import {useState} from 'react';
 
-function Cart() {
+function Cart(props) {
   const monsteraPrice = 12;
+  const {cart, updateCart} = props;
 
-  const [cart, updateCart] = useState(0);
   const [isOpen, setIsOpen] = useState(true);
+
+  // Compute total price of the cart.
+  const total = cart.reduce(
+    (acc, plant) => acc + plant.amount * plant.price,
+    0
+  );
 
   if (!isOpen) {
     return (
@@ -20,14 +26,15 @@ function Cart() {
     <div className="tjh_cart">
       <button className="tjh_cart_toggle_button" onClick = {() => setIsOpen(false)}>Close</button>
       <h2>Cart:</h2>
-      <div>
-        Monstera: {monsteraPrice} euro(s)
-        <button onClick = {() => updateCart(cart + 1)}>
-          Add to cart
-        </button>
-      </div>
-      <h3>Total: {monsteraPrice * cart} euro(s)</h3>
-      <button onClick = {() => updateCart(0)}>Empty cart</button>
+      {
+        cart.map(({name, price, amount}, index) => (
+        <div key={`${name}-${index}`}>
+          {name} {price} euro(s) x {amount}
+        </div>
+        ))
+      }
+      <h3>Total: {total} euro(s)</h3>
+      <button onClick = {() => updateCart([])}>Empty cart</button>
     </div>
   );
 }
