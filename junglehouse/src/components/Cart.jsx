@@ -1,20 +1,33 @@
 
 import '../styles/Cart.css';
+import {useState} from 'react';
 
 function Cart() {
   const monsteraPrice = 12;
-  const ivyPrice = 8;
-  const flowerPrice = 15;
+
+  const [cart, updateCart] = useState(0);
+  const [isOpen, setIsOpen] = useState(true);
+
+  if (!isOpen) {
+    return (
+      <div className="tjh_cart_closed">
+        <button className="tjh_cart_toggle_button" onClick = {() => setIsOpen(true)}>Open the cart</button>
+      </div>
+    );
+  }
 
   return (
     <div className="tjh_cart">
+      <button className="tjh_cart_toggle_button" onClick = {() => setIsOpen(false)}>Close</button>
       <h2>Cart:</h2>
-      <ul>
-        <li>Monstera: {monsteraPrice} euro(s)</li>
-        <li>Ivy: {ivyPrice} euro(s)</li>
-        <li>Flowers: {flowerPrice} euro(s)</li>
-      </ul>
-      <p>Total: {monsteraPrice + ivyPrice + flowerPrice} euro(s)</p>
+      <div>
+        Monstera: {monsteraPrice} euro(s)
+        <button onClick = {() => updateCart(cart + 1)}>
+          Add to cart
+        </button>
+      </div>
+      <h3>Total: {monsteraPrice * cart} euro(s)</h3>
+      <button onClick = {() => updateCart(0)}>Empty cart</button>
     </div>
   );
 }
