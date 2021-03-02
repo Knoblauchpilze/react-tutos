@@ -3,7 +3,6 @@ import '../styles/Cart.css';
 import {useState} from 'react';
 
 function Cart(props) {
-  const monsteraPrice = 12;
   const {cart, updateCart} = props;
 
   const [isOpen, setIsOpen] = useState(true);

@@ -1,15 +1,13 @@
 
 import '../styles/ShoppingList.css';
 import {plants} from '../datas/plants.js';
+import Categories from './Categories.jsx';
 import PlantItem from './PlantItem.jsx';
+import {useState} from 'react';
 
 function ShoppingList(props) {
   const {cart, updateCart} = props;
-
-  const categories = plants.reduce(
-    (acc, plant) => (acc.includes(plant.category) ? acc : acc.concat(plant.category)),
-    []
-  );
+  const [category, updateCategory] = useState("all");
 
   function addToCart(name, price) {
     // Check whether the plant is already part of the
@@ -42,15 +40,19 @@ function ShoppingList(props) {
     }
   }
 
+  // Filter plants to keep only the ones having a
+  // category matching the currently selected one.
+  const fPlants = plants.filter(
+    plant => (
+      category === "all" || plant.category === category
+    )
+  );
+
   return (
-    <div>
-      <ul>
-        {categories.map((category) => (
-          <li key={category}>{category}</li>
-        ))}
-      </ul>
+    <div className="tjh_shopping_list">
+      <Categories category={category} updateCategory={updateCategory}/>
       <ul className="tjh_plant_list">
-        {plants.map((plant, index) => (
+        {fPlants.map((plant, index) => (
           <li key={plant.id}>
             <PlantItem
               name = {plant.name}
