@@ -1,7 +1,6 @@
 
 import '../styles/PlantItem.css';
 import CareScale from './CareScale.jsx';
-import {useState} from 'react';
 
 function PlantItem(props) {
   const {
@@ -12,8 +11,6 @@ function PlantItem(props) {
     water,
     isSpecialOffer
   } = props;
-
-  const [cart, addToCart] = useState(0);
 
   return (
     <div key={id} className="tjh_plant_item">

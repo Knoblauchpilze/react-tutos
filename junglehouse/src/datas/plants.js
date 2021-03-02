@@ -35,7 +35,6 @@ export const plants = [
     id: "3sd",
     light: 1,
     water: 2,
-    price: 0,
     cover: pothos,
     price: 9,
   },

@@ -34,6 +34,7 @@ function handleClick(care, amount) {
       break;
     case 3:
       text = "a lot of";
+      break;
     default:
       text = "an unknown amount of";
       break;
