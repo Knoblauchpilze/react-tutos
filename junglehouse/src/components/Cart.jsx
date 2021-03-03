@@ -1,5 +1,6 @@
 
 import '../styles/Cart.css';
+import CartItem from './CartItem.jsx';
 import {useState} from 'react';
 import {useEffect} from 'react';
 
@@ -37,9 +38,7 @@ function Cart(props) {
       <h2>Cart:</h2>
       {
         cart.map(({name, price, amount}, index) => (
-        <div key={`${name}-${index}`}>
-          {name} {price} euro(s) x {amount}
-        </div>
+          <CartItem key={`${name}-${index}`} name={name} price={price} amount={amount} cart={cart} updateCart={updateCart}/>
         ))
       }
       <h3>Total: {total} euro(s)</h3>

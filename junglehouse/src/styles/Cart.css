@@ -1,5 +1,6 @@
 
 .tjh_cart {
+	width: 250px;
   padding: 32px;
   color: #ffffff;
   background: #31b572;
@@ -23,7 +24,7 @@
 
 .tjh_cart_closed {
 	padding: 32px;
-	width: 200px;
+	width: 250px;
 }
 
 .tjh_cart_closed > button {
