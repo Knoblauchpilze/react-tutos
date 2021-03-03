@@ -5,10 +5,24 @@ import Banner from './Banner.jsx';
 import ShoppingList from './ShoppingList.jsx';
 import Cart from './Cart.jsx';
 import Footer from './Footer.jsx';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 function App() {
-  const [cart, updateCart] = useState([]);
+  // Restore the content of the cart upon first
+  // loading the component.
+  const savedCart = localStorage.getItem("cart");
+  const [cart, updateCart] = useState(
+    savedCart ? JSON.parse(savedCart) : []
+  );
+
+  // Save the content of the cart upon modification
+  // of its content.
+  useEffect(
+    () => {
+      localStorage.setItem("cart", JSON.stringify(cart))
+    },
+    [cart]
+  );
 
   return (
     <div>

@@ -2,7 +2,7 @@
 import {useState} from "react";
 import '../styles/Footer.css';
 
-function Footer() {
+function Footer({cart}) {
   const [inputValue, setInputValue] = useState('');
 
   function handleInput (e) {

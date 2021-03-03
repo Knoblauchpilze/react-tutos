@@ -1,6 +1,7 @@
 
 import '../styles/Cart.css';
 import {useState} from 'react';
+import {useEffect} from 'react';
 
 function Cart(props) {
   const {cart, updateCart} = props;
@@ -11,6 +12,15 @@ function Cart(props) {
   const total = cart.reduce(
     (acc, plant) => acc + plant.amount * plant.price,
     0
+  );
+
+  // Update the tab title to reflect the value
+  // of the cart.
+  useEffect(
+    () => {
+      document.title = `TJH: ${total}€ worth of nature`
+    },
+    [total]
   );
 
   if (!isOpen) {
