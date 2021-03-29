@@ -14,7 +14,7 @@ function ShoppingList(props) {
     // cart: if yes we will update the amount that is
     // being ordered and otherwise we'll add an entry.
     const curPlant = cart.find((plant) => plant.name === name);
-    
+
     if (curPlant) {
       // We don't want to change the position of the
       // plant in the cart: so we will just copy the
